@@ -1,0 +1,27 @@
+{
+    "name": "portrait-bauhaus-generator",
+    "version": "1.0.0",
+    "description": "Portrait-Bauhaus-Generator",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/scsx/Portrait-Bauhaus-Generator.git"
+    },
+    "author": "SCSX",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/scsx/Portrait-Bauhaus-Generator/issues"
+    },
+    "homepage": "https://github.com/scsx/Portrait-Bauhaus-Generator#readme",
+    "devDependencies": {
+        "grunt-contrib-sass": "^1.0.0",
+        "grunt-contrib-watch": "^1.1.0"
+    },
+    "dependencies": {
+        "grunt": "^1.0.4",
+        "spectre.css": "^0.5.8"
+    }
+}

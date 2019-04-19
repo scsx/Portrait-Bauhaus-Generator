@@ -1,0 +1,125 @@
+html {
+    height: 100%;
+
+    body {
+        min-height: 100%;
+        height: 100%;
+        background: #282828;
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+
+#wrapper {
+    height: 100%;
+}
+
+#options {
+    position: absolute;
+    width: 30%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 5vh;
+    background: #232323;
+    border-right: 1px solid #333;
+    color: #e5e5f9;
+    overflow: auto;
+
+    h1 {
+        line-height: .8;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #333;
+        small {
+            display: block;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        h5 {
+            font-size: 17px;
+            color: #8a89bb;
+        }
+
+        select {
+            background: #232323;
+
+            option {
+                background: #232323;
+            }
+        }
+    }
+
+    table.imgpos {
+        td {
+            width: 20px;
+            height: 20px;
+            button {
+                padding: 2px;
+            }
+        }
+    }
+}
+
+#areatela {
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    left: 30%;
+
+    #tela {
+        position: absolute;
+        width: 70vh;
+        height: 70vh;
+        top: 6vh;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &.fullwidth {
+            width: 100%;
+            left: 0;
+            transform: translateX(0);
+        }
+        #back {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        #imageholder {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: right bottom;
+        }
+
+        #divs {
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            &.show {
+                overflow: visible;                
+            }
+
+            .rect {
+                position: absolute;
+            }
+        }
+    }
+}

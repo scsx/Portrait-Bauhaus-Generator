@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+}
+html body {
+  min-height: 100%;
+  height: 100%;
+  background: #282828;
+  overflow: hidden;
+  position: relative;
+}
+
+#wrapper {
+  height: 100%;
+}
+
+#options {
+  position: absolute;
+  width: 30%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 5vh;
+  background: #232323;
+  border-right: 1px solid #333;
+  color: #e5e5f9;
+  overflow: auto;
+}
+#options h1 {
+  line-height: 0.8;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+}
+#options h1 small {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+}
+#options .form-group {
+  margin-bottom: 20px;
+}
+#options .form-group h5 {
+  font-size: 17px;
+  color: #8a89bb;
+}
+#options .form-group select {
+  background: #232323;
+}
+#options .form-group select option {
+  background: #232323;
+}
+#options table.imgpos td {
+  width: 20px;
+  height: 20px;
+}
+#options table.imgpos td button {
+  padding: 2px;
+}
+
+#areatela {
+  position: absolute;
+  width: 70%;
+  height: 100vh;
+  left: 30%;
+}
+#areatela #tela {
+  position: absolute;
+  width: 70vh;
+  height: 70vh;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#areatela #tela.fullwidth {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
+}
+#areatela #tela #back {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+#areatela #tela #imageholder {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right bottom;
+}
+#areatela #tela #divs {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+#areatela #tela #divs.show {
+  overflow: visible;
+}
+#areatela #tela #divs .rect {
+  position: absolute;
+}
+
+/*# sourceMappingURL=app.css.map */
