@@ -9,6 +9,7 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700" rel="stylesheet"> -->
     <link rel="stylesheet" href="node_modules/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="node_modules/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="node_modules/spectre.css/dist/spectre-icons.min.css">
     <link rel="stylesheet" href="dist/css/app.css">
 </head>
 
@@ -21,115 +22,137 @@
                 <small class="author">by <a href="https://github.com/scsx" target="_blank">scsx</a></small>
             </h1>
 
-            <div class="columns">
-                <div class="column col-6">
-                    <div class="form-group">
-                        <h5>Img position</h5>
-                        <table class="imgpos">
-                            <tr>
-                                <td><button>O</button></td>
-                                <td><button>O</button></td>
-                                <td><button>O</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>O</button></td>
-                                <td><button>O</button></td>
-                                <td><button>O</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>O</button></td>
-                                <td><button>O</button></td>
-                                <td><button>O</button></td>
-                            </tr>
-                        </table>
-                        <!-- <div class="form-group">
-                            <select class="form-select" id="imgPos">
-                                <option>center</option>
-                                <option>cover</option>
-                            </select>
-                        </div> -->
+            <div class="accordion-container">
+                <div class="accordion">
+                    <input id="accordion-getting-started" type="checkbox" name="docs-accordion-checkbox" checked
+                        hidden="">
+                    <label class="accordion-header c-hand" for="accordion-getting-started"><i
+                            class="icon icon-arrow-right mr-1"></i>Image & Colors</label>
+                    <div class="accordion-body">
+                        <div class="columns">
+                            <div class="column col-6">
+                                <div class="form-group">
+                                    <h5>Img position</h5>
+                                    <div class="form-group">
+                                        <select class="form-select" id="imgPos">
+                                            <option>top left</option>
+                                            <option>top center</option>
+                                            <option>top right</option>
+                                            <option>center left</option>
+                                            <option>center</option>
+                                            <option>center right</option>
+                                            <option>bottom left</option>
+                                            <option selected>bottom center</option>
+                                            <option>bottom right</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column col-6">
+                                <div class="form-group">
+                                    <h5>Img size</h5>
+                                    <select class="form-select" id="imgSize">
+                                        <option>cover</option>
+                                        <option selected>contain</option>
+                                        <option>90%</option>
+                                        <option>80%</option>
+                                        <option>70%</option>
+                                        <option>60%</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column col-6">
+                                <a class="btn btn-primary" href="#images">Choose image</a>
+                            </div>
+                            <div class="column col-6">
+                                <a class="btn btn-primary" href="#palettes">Choose colors</a>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class="column col-6">
-                    <div class="form-group">
-                        <h5>Img size</h5>
+                </div><!-- IMAGE -->
+                <div class="accordion">
+                    <input id="accordion-layout" type="checkbox" name="docs-accordion-checkbox" checked hidden="">
+                    <label class="accordion-header c-hand" for="accordion-layout"><i
+                            class="icon icon-arrow-right mr-1"></i>Layout</label>
+                    <div class="accordion-body">
+                        <div class="columns">
+                            <div class="column col-6">
+                                <div class="form-group">
+                                    <h5>Width 100%</h5>
+                                    <label class="form-switch">
+                                        <input type="checkbox" id="w100">
+                                        <i class="form-icon"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="column col-6">
+                                <div class="form-group">
+                                    <h5>Overflow</h5>
+                                    <label class="form-switch">
+                                        <input type="checkbox" id="overflow">
+                                        <i class="form-icon"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <select class="form-select" id="imgSize">
-                                <option>cover</option>
-                                <option>contain</option>
-                                <option>90%</option>
-                                <option>80%</option>
-                                <option>70%</option>
-                                <option>60%</option>
-                            </select>
+                            <h5>Min/max stripes (back)</h5>
+                            <div class="columns">
+                                <div class="column col-6">
+                                    <input class="slider tooltip" type="range" min="1" max="20" value="5" id="backMin">
+                                </div>
+                                <div class="column col-6">
+                                    <input class="slider tooltip" type="range" min="1" max="50" value="10" id="backMax">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div><!-- BACKGROUND -->
+                <div class="accordion">
+                    <input id="accordion-elements" type="checkbox" name="docs-accordion-checkbox" checked hidden="">
+                    <label class="accordion-header c-hand" for="accordion-elements"><i
+                            class="icon icon-arrow-right mr-1"></i>Elements</label>
+                    <div class="accordion-body">
+                        <div class="form-group">
+                            <h5>Shapes</h5>
+                            <label class="form-radio form-inline">
+                                <input type="radio" name="shape" checked=""><i class="form-icon"></i> Rectangles
+                            </label>
+                            <label class="form-radio form-inline">
+                                <input type="radio" name="shape"><i class="form-icon"></i> Circles
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <h5>Min/max shapes (front)</h5>
+                            <div class="columns">
+                                <div class="column col-6">
+                                    <input class="slider tooltip" type="range" min="0" max="20" value="3"
+                                        oninput="this.setAttribute('value', this.value);" id="frontMin">
+                                </div>
+                                <div class="column col-6">
+                                    <input class="slider tooltip" type="range" min="0" max="50" value="10"
+                                        oninput="this.setAttribute('value', this.value);" id="frontMax">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- DIVS -->
+            </div>
+
+            <div class="btn-group btn-group-block">
+                <button class="btn btn-success btn-lg" id="redraw">Redraw</button>
+                <button class="btn bg-dark btn-lg" id="redraw">Screenshot (β)</button>
             </div>
 
 
 
-            <div class="form-group">
-                <h5>Shapes</h5>
-                <label class="form-radio form-inline">
-                    <input type="radio" name="shape" checked=""><i class="form-icon"></i> Rectangles
-                </label>
-                <label class="form-radio form-inline">
-                    <input type="radio" name="shape"><i class="form-icon"></i> Circles
-                </label>
-            </div>
-
-            <div class="columns">
-                <div class="column col-6">
-                    <div class="form-group">
-                        <h5>Width 100%</h5>
-                        <label class="form-switch">
-                            <input type="checkbox" id="w100">
-                            <i class="form-icon"></i>
-                        </label>
-                    </div>
-                </div>
-                <div class="column col-6">
-                    <div class="form-group">
-                        <h5>Overflow</h5>
-                        <label class="form-switch">
-                            <input type="checkbox" id="overflow">
-                            <i class="form-icon"></i>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <h5>Min/max stripes (back)</h5>
-                <div class="columns">
-                    <div class="column col-6">
-                        <input class="slider tooltip" type="range" min="1" max="20" value="5"
-                            id="backMin">
-                    </div>
-                    <div class="column col-6">
-                        <input class="slider tooltip" type="range" min="1" max="50" value="10"
-                            id="backMax">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <h5>Min/max shapes (front)</h5>
-                <div class="columns">
-                    <div class="column col-6">
-                        <input class="slider tooltip" type="range" min="0" max="20" value="3"
-                            oninput="this.setAttribute('value', this.value);" id="frontMin">
-                    </div>
-                    <div class="column col-6">
-                        <input class="slider tooltip" type="range" min="0" max="50" value="10"
-                            oninput="this.setAttribute('value', this.value);" id="frontMax">
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn btn-success btn-lg" id="redraw">Redraw</button>
         </div>
+
         <div id="areatela">
             <div id="tela">
                 <div id="back"></div>
@@ -137,9 +160,86 @@
                 <div id="divs"></div>
             </div>
         </div>
-    </div>
 
+
+        <div class="modal modal-lg" id="images">
+            <!-- To make a modal appear, add the active class to the modal container. -->
+            <!-- <a href="#close" class="modal-overlay" aria-label="Close"></a> -->
+            <div class="modal-container">
+                <div class="modal-header">
+                    <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+                    <h4>Available images</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb1" />
+                                <label for="cb 1"><img src="dist/img/britishlibrary-11158378376.png" /></label>
+                            </li>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb2" />
+                                <label for="cb 2"><img src="dist/img/britishlibrary-11306853283.png" /></label>
+                            </li>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb3" />
+                                <label for="cb 3"><img src="dist/img/britishlibrary-12459031975.png" /></label>
+                            </li>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb4" />
+                                <label for="cb 4"><img src="dist/img/fdr.png" /></label>
+                            </li>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb5" />
+                                <label for="cb 5"><img src="dist/img/britishlibrary-11299952284.png" /></label>
+                            </li>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb6" />
+                                <label for="cb 6"><img src="dist/img/britishlibrary-12459366944.png" /></label>
+                            </li>
+                        </ul>
+                        <h4>Choose by URL</h4>
+                        <div class="input-group"><span class="input-group-addon">Enter URL</span>
+                            <input class="form-input" type="text" placeholder="site name" id="imagePath">
+                        </div>
+                        <div class="btn-group">
+                            <a href="#close"  class="btn btn-success btn-lg" id="chooseImage">Choose</a>
+                            <a href="#close" class="btn btn-lg" id="redraw">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-lg" id="palettes">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <!-- <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a> -->
+                    <h4>Available colors</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <input name="imageurl" type="radio" id="eretrrwwrwr" />
+                            </li>
+                        </ul>
+                        <h4>Enter array</h4>
+                        <div class="input-group"><span class="input-group-addon">Enter URL</span>
+                            <input class="form-input" type="text" placeholder="site name" id="imagePath">
+                        </div>
+                        <div class="btn-group my-2">
+                            <a href="#close"  class="btn btn-success btn-lg" id="chooseColors">Choose</a>
+                            <a href="#close" class="btn btn-lg" id="redraw">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <script type="text/javascript" src="dist/js/draw.js"></script>
+    <script type="text/javascript" src="dist/js/defaults.js"></script>
     <script type="text/javascript" src="dist/js/interface.js"></script>
 </body>
 

@@ -1,12 +1,6 @@
 const canvasW = document.getElementById('tela').clientWidth;
 const canvasH = document.getElementById('tela').clientHeight;
 
-// https://colorpalettes.net/
-const colorPalette3984 = ["#222830", "#b0b5b5", "#ecbd8b", "#f4841a"];
-const colorPalette3980 = ["#59585e", "#b7caca", "#f5d8ad", "#be865c", "#b1a671"];
-const colorPalette3916 = ["#222830", "#b0b5b5", "#ecbd8b", "#f4841a"];
-const mine1 = ["#822929", "#479ab9", "#242a2c", "#d8cdaa"];
-
 function rnd(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -43,8 +37,8 @@ function generateProportion (parts) {
 
 function createComp( bckMin, bckMax, divMin, divMax, circle = false, palette, imgUrl ) {
 
-    // Photo
-    document.getElementById("imageholder").style.backgroundImage = imgUrl;
+    // Image
+    document.getElementById("imageholder").style.backgroundImage = "url('" + imgUrl + "')";
 
     // Background
     bckCount = rnd(bckMin, bckMax); // nr of stripes in the back
@@ -64,7 +58,7 @@ function createComp( bckMin, bckMax, divMin, divMax, circle = false, palette, im
     for (i = 1; i <= divsCount; i++) {
         let frontDiv = document.createElement('div');
         frontDiv.id = 'frontDiv' + i;
-        frontDiv.className = 'rect';
+        frontDiv.className = 'shape';
 
         if (circle) {
             frontDiv.style.width = frontDiv.style.height = rnd(10, 40) + "%";
@@ -76,6 +70,7 @@ function createComp( bckMin, bckMax, divMin, divMax, circle = false, palette, im
         frontDiv.style.left = rnd(-15, 95) + "%";
         frontDiv.style.top = rnd(-5, 95) + "%";
         frontDiv.style.opacity = (rnd(50, 90) / 100);
+        frontDiv.style.zIndex = rnd(1, 4);
         frontDiv.style.backgroundColor = palette[rnd(0, palette.length - 1)];
         document.getElementById("divs").appendChild(frontDiv);
     }

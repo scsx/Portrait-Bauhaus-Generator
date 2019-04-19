@@ -1,17 +1,12 @@
+// REDRAW
+function reDraw() {
+    removeElementsByClass("back");
+    removeElementsByClass("shape");
+    createComp( bckMin, bckMax, divMin, divMax, circle, palette, imgUrl );
+}
 
-// Defaults
-let bckMin = 5,
-    bckMax = 10,
-    divMin = 3,
-    divMax = 10,
-    circle = false,
-    palette = mine1,
-    //imgUrl = "url('dist/img/britishlibrary-11306853283.png')";
-    imgUrl = "url('dist/img/fdr.png')";
-
-
-// START
-createComp( bckMin, bckMax, divMin, divMax, circle, palette, imgUrl );
+// INITIAL DRAW
+reDraw();
 
 // delete elements
 function removeElementsByClass(className){
@@ -21,12 +16,37 @@ function removeElementsByClass(className){
     }
 }
 
+// Choose image
+let newPath;
+let imageRadios = document.querySelectorAll('[name="imageurl"]');
+for (let i = 0; i < imageRadios.length; i++) {
+    imageRadios[i].addEventListener('change', function() {
+        newPath = imageRadios[i].nextSibling.nextSibling.children[0].src;
+    });
+}
+document.getElementById("chooseImage").onclick = function() {
+    
+    let imagePath = document.getElementById('imagePath').value;
+    if (imagePath != null && imagePath != "") {
+        newPath = imagePath;
+    }
+    imgUrl = newPath;
+    document.getElementById('imagePath').value = "";
+    reDraw();
+}
+
 // shape
 let shapeRadios = document.querySelectorAll('[name="shape"]');
 for (var i = 0; i < shapeRadios.length; i++) {
     shapeRadios[i].addEventListener('change', function() {
         circle = !circle;
     });
+}
+
+// img position
+document.getElementById("imgPos").onchange = function() {
+    let newImgPos = this.options[this.selectedIndex].text;
+    document.getElementById("imageholder").style.backgroundPosition = newImgPos;
 }
 
 // img size
@@ -50,26 +70,20 @@ document.getElementById("backMin").oninput = function() {
     this.setAttribute('value', this.value);
     bckMin = this.value;
 }
-
 document.getElementById("backMax").oninput = function() {
     this.setAttribute('value', this.value);
     bckMax = this.value;
 }
-
 document.getElementById("frontMin").oninput = function() {
     this.setAttribute('value', this.value);
     divMin = this.value;
 }
-
 document.getElementById("frontMax").oninput = function() {
     this.setAttribute('value', this.value);
     divMax = this.value;
 }
 
-// REDRAW
+// MAIN ACTION
 document.getElementById("redraw").onclick = function() {
-    removeElementsByClass("back");
-    removeElementsByClass("rect");
-
-    createComp( bckMin, bckMax, divMin, divMax, circle, palette, imgUrl );
+    reDraw();
 }
