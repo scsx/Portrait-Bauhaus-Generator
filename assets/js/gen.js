@@ -42,7 +42,7 @@ window.onload = function () {
         return finalResults;
     }
 
-    function createComp(bckMin, bckMax, divMin, divMax, palette, imgUrl ) {
+    function createComp(bckMin, bckMax, divMin, divMax, circle = false, palette, imgUrl ) {
 
         // Photo
         document.getElementById("imageholder").style.backgroundImage = imgUrl;
@@ -57,7 +57,6 @@ window.onload = function () {
             backDiv.className = 'back';
             backDiv.style.height = bckCountParts[i] + "%";
             backDiv.style.backgroundColor = palette[rnd(0, palette.length - 1)];
-
             document.getElementById("back").appendChild(backDiv);
         }
 
@@ -67,23 +66,32 @@ window.onload = function () {
             let frontDiv = document.createElement('div');
             frontDiv.id = 'frontDiv' + i;
             frontDiv.className = 'rect';
-            frontDiv.style.width = rnd(2, 80) + "%";
-            frontDiv.style.height = rnd(2, 10) + "%";
+
+            if (circle) {
+                frontDiv.style.width = frontDiv.style.height = rnd(10, 40) + "%";
+                frontDiv.style.borderRadius = "50%";
+            } else {
+                frontDiv.style.width = rnd(2, 80) + "%";
+                frontDiv.style.height = rnd(2, 10) + "%";
+            }
             frontDiv.style.left = rnd(-5, 95) + "%";
             frontDiv.style.top = rnd(-5, 95) + "%";
             frontDiv.style.opacity = (rnd(50, 90) / 100);
-            
             frontDiv.style.backgroundColor = palette[rnd(0, palette.length - 1)];
-
             document.getElementById("divs").appendChild(frontDiv);
         }
 
     }
 
-
     // START
-    createComp(5, 10, 3, 6, colorPalette3980, "url('../assets/img/fdr.png')");
+    createComp(5, 15, 3, 30, true, colorPalette3984, "url('../assets/img/britishlibrary-11158378376.png')");
 
+/*
+const colorPalette3984 = ["#222830", "#b0b5b5", "#ecbd8b", "#f4841a"];
+    const colorPalette3980 = ["#59585e", "#b7caca", "#f5d8ad", "#be865c", "#b1a671"];
+    const colorPalette3916 = ["#222830", "#b0b5b5", "#ecbd8b", "#f4841a"];
+    const mine1 = ["#b21010", "#479ab9", "#242a2c", "#d8cdaa"];
+*/
 }
 
 
