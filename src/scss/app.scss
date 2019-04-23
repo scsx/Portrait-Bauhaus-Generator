@@ -95,7 +95,7 @@ html {
 
 .modal.modal-lg {
     align-items: start;
-    background: #333;
+    background: #333333e3;
 
     .modal-overlay {
         background: #333;
@@ -122,9 +122,10 @@ html {
 
         li {
             display: inline-block;
-            width: 24%;
+            width: 19%;
             padding: 20px;
             position: relative;
+            margin-top: 0;
         }
 
         input[type="radio"][id^="cb"] {
@@ -145,13 +146,44 @@ html {
         }
 
         :checked+label::before {
-            background-color: pruple;
+            background-color: purple;
             transform: scale(1);
         }
 
         :checked+label img {
             z-index: -1;
             border: 6px solid #4b48d6;
+        }
+    }
+    &#palettes {
+        .modal-body {
+            padding-top: 0;
+        }
+        #colorsGrid {
+            .column {
+                .card {
+                    margin-bottom: 20px;
+                    background-color: pruple;
+                    .card-header {
+                        padding-top: 8px;
+                        .card-title {
+                            font-weight: 600;
+                        }
+                    }
+                    ul {
+                        margin: 0;
+                        height: 50px;
+                        display: flex; 
+                        align-items: stretch;
+                        border-bottom: .05rem solid #dadee4;
+                        li {
+                            margin: 0;
+                            flex-grow: 1;
+                            list-style: none;
+                        }
+                    }
+                }
+            }
         }
     }
 }

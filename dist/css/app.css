@@ -77,7 +77,7 @@ html body {
 
 .modal.modal-lg {
   align-items: start;
-  background: #333;
+  background: #333333e3;
 }
 .modal.modal-lg .modal-overlay {
   background: #333;
@@ -99,9 +99,10 @@ html body {
 }
 .modal.modal-lg#images li {
   display: inline-block;
-  width: 24%;
+  width: 19%;
   padding: 20px;
   position: relative;
+  margin-top: 0;
 }
 .modal.modal-lg#images input[type=radio][id^=cb] {
   opacity: 0;
@@ -119,12 +120,37 @@ html body {
   transform-origin: 50% 50%;
 }
 .modal.modal-lg#images :checked + label::before {
-  background-color: pruple;
+  background-color: purple;
   transform: scale(1);
 }
 .modal.modal-lg#images :checked + label img {
   z-index: -1;
   border: 6px solid #4b48d6;
+}
+.modal.modal-lg#palettes .modal-body {
+  padding-top: 0;
+}
+.modal.modal-lg#palettes #colorsGrid .column .card {
+  margin-bottom: 20px;
+  background-color: pruple;
+}
+.modal.modal-lg#palettes #colorsGrid .column .card .card-header {
+  padding-top: 8px;
+}
+.modal.modal-lg#palettes #colorsGrid .column .card .card-header .card-title {
+  font-weight: 600;
+}
+.modal.modal-lg#palettes #colorsGrid .column .card ul {
+  margin: 0;
+  height: 50px;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 0.05rem solid #dadee4;
+}
+.modal.modal-lg#palettes #colorsGrid .column .card ul li {
+  margin: 0;
+  flex-grow: 1;
+  list-style: none;
 }
 
 #areatela {

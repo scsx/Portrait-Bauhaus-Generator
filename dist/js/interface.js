@@ -9,11 +9,48 @@ function reDraw() {
 reDraw();
 
 // delete elements
-function removeElementsByClass(className){
+function removeElementsByClass(className) {
     let elements = document.getElementsByClassName(className);
     while(elements.length > 0){
         elements[0].parentNode.removeChild(elements[0]);
     }
+}
+
+// Choose color palette
+let palEntries = Object.entries(allPalettes);
+for (i = 0; i < palEntries.length; i++) {
+    let palName = palEntries[i][0];
+    let palColors = palEntries[i][1];
+    let tempHTML = `
+    <div class="column col-3" id="colorPalette_${i}">
+        <div class="card">
+            <div class="card-image">
+                <ul>
+                    ${palColors.map(color => 
+                        `<li style="background-color: ${color};"></li>`
+                    ).join('')}
+                </ul>
+            </div>
+            <div class="card-header">
+                <div class="card-title">${palName}</div>
+            </div>
+            <div class="card-footer">
+                <a href="#close" class="btn btn-sm btn-success setpalette" data-palette="${palName}">Choose</a>
+            </div>
+        </div>
+    </div>
+    `;
+
+    document.getElementById("colorsGrid").innerHTML += tempHTML;
+}
+
+let allButtons = document.querySelectorAll('.setpalette');
+for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].addEventListener('click', function() {
+        let thisPalette = this.dataset.palette;
+        palette = allPalettes[thisPalette];
+        reDraw();
+    });
 }
 
 // Choose image
@@ -24,8 +61,7 @@ for (let i = 0; i < imageRadios.length; i++) {
         newPath = imageRadios[i].nextSibling.nextSibling.children[0].src;
     });
 }
-document.getElementById("chooseImage").onclick = function() {
-    
+document.getElementById("chooseImage").onclick = function() { 
     let imagePath = document.getElementById('imagePath').value;
     if (imagePath != null && imagePath != "") {
         newPath = imagePath;
@@ -84,6 +120,6 @@ document.getElementById("frontMax").oninput = function() {
 }
 
 // MAIN ACTION
-document.getElementById("redraw").onclick = function() {
+document.getElementById("mainRedraw").onclick = function() {
     reDraw();
 }

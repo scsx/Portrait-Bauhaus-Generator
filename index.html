@@ -131,12 +131,10 @@
                             <h5>Min/max shapes (front)</h5>
                             <div class="columns">
                                 <div class="column col-6">
-                                    <input class="slider tooltip" type="range" min="0" max="20" value="3"
-                                        oninput="this.setAttribute('value', this.value);" id="frontMin">
+                                    <input class="slider tooltip" type="range" min="0" max="20" value="3" oninput="this.setAttribute('value', this.value);" id="frontMin">
                                 </div>
                                 <div class="column col-6">
-                                    <input class="slider tooltip" type="range" min="0" max="50" value="10"
-                                        oninput="this.setAttribute('value', this.value);" id="frontMax">
+                                    <input class="slider tooltip" type="range" min="0" max="50" value="10" oninput="this.setAttribute('value', this.value);" id="frontMax">
                                 </div>
                             </div>
                         </div>
@@ -145,11 +143,9 @@
             </div>
 
             <div class="btn-group btn-group-block">
-                <button class="btn btn-success btn-lg" id="redraw">Redraw</button>
-                <button class="btn bg-dark btn-lg" id="redraw">Screenshot (β)</button>
+                <button class="btn btn-success btn-lg" id="mainRedraw">Redraw</button>
+                <button class="btn bg-dark btn-lg" id="">Screenshot (β)</button>
             </div>
-
-
 
         </div>
 
@@ -175,36 +171,39 @@
                         <ul>
                             <li>
                                 <input name="imageurl" type="radio" id="cb1" />
-                                <label for="cb 1"><img src="dist/img/britishlibrary-11158378376.png" /></label>
+                                <label for="cb1"><img src="dist/img/britishlibrary-11158378376.png" /></label>
                             </li>
                             <li>
                                 <input name="imageurl" type="radio" id="cb2" />
-                                <label for="cb 2"><img src="dist/img/britishlibrary-11306853283.png" /></label>
+                                <label for="cb2"><img src="dist/img/britishlibrary-11306853283.png" /></label>
                             </li>
                             <li>
                                 <input name="imageurl" type="radio" id="cb3" />
-                                <label for="cb 3"><img src="dist/img/britishlibrary-12459031975.png" /></label>
+                                <label for="cb3"><img src="dist/img/britishlibrary-12459031975.png" /></label>
                             </li>
                             <li>
                                 <input name="imageurl" type="radio" id="cb4" />
-                                <label for="cb 4"><img src="dist/img/fdr.png" /></label>
+                                <label for="cb4"><img src="dist/img/fdr.png" /></label>
                             </li>
                             <li>
                                 <input name="imageurl" type="radio" id="cb5" />
-                                <label for="cb 5"><img src="dist/img/britishlibrary-11299952284.png" /></label>
+                                <label for="cb5"><img src="dist/img/britishlibrary-11299952284.png" /></label>
                             </li>
                             <li>
                                 <input name="imageurl" type="radio" id="cb6" />
-                                <label for="cb 6"><img src="dist/img/britishlibrary-12459366944.png" /></label>
+                                <label for="cb6"><img src="dist/img/britishlibrary-12459366944.png" /></label>
+                            </li>
+                            <li>
+                                <input name="imageurl" type="radio" id="cb7" />
+                                <label for="cb7"><img src="dist/img/britishlibrary-11249708046.png" /></label>
                             </li>
                         </ul>
-                        <h4>Choose by URL</h4>
-                        <div class="input-group"><span class="input-group-addon">Enter URL</span>
-                            <input class="form-input" type="text" placeholder="site name" id="imagePath">
+                        <div class="input-group"><span class="input-group-addon">Or enter URL</span>
+                            <input class="form-input" type="text" placeholder="image adress" id="imagePath">
                         </div>
                         <div class="btn-group">
                             <a href="#close"  class="btn btn-success btn-lg" id="chooseImage">Choose</a>
-                            <a href="#close" class="btn btn-lg" id="redraw">Cancel</a>
+                            <a href="#close" class="btn bg-secondary btn-lg">Cancel</a>
                         </div>
                     </div>
                 </div>
@@ -219,18 +218,11 @@
                 </div>
                 <div class="modal-body">
                     <div class="content">
-                        <ul>
-                            <li>
-                                <input name="imageurl" type="radio" id="eretrrwwrwr" />
-                            </li>
-                        </ul>
-                        <h4>Enter array</h4>
-                        <div class="input-group"><span class="input-group-addon">Enter URL</span>
-                            <input class="form-input" type="text" placeholder="site name" id="imagePath">
-                        </div>
+
+                        <div class="columns" id="colorsGrid"></div>
+                        
                         <div class="btn-group my-2">
-                            <a href="#close"  class="btn btn-success btn-lg" id="chooseColors">Choose</a>
-                            <a href="#close" class="btn btn-lg" id="redraw">Cancel</a>
+                            <a href="#close" class="btn bg-secondary btn-lg">Cancel</a>
                         </div>
                     </div>
                 </div>
